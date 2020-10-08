@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Snake Game</title>
+    <style media="screen">
+        body{
+            height: 100vh;
+            width : 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: black;
+        }
+
+        #game-board{
+          background-color:black;
+          width: 75vmin;
+          height: 75vmin;
+          display: grid;
+            border: .25vmin solid #CCC;
+          margin-bottom: 10px;
+          grid-template-rows: repeat(21, 1fr);
+          grid-template-columns: repeat(21, 1fr);
+        }
+
+        .snake {
+          background-color:hsl(50, 100%, 50%);
+          border: .25vmin solid black;
+
+        }
+
+        .snakeHead {
+          background-color: #CCC;
+          border: .25vmin solid black;
+
+          border-top-left-radius: 50%;
+          border-top-right-radius: 50%;
+
+        }
+        .snakeObs {
+          background-color: #ffafb2;
+        }
+
+        .snakeTail {
+          background-color: red;
+          border: .25vmin solid black;
+
+        }
+
+      .food {
+        background-color: hsl(200, 100%, 50%);
+        border: .25vmin solid black;
+        border-radius: 50%;
+        }
+        #score{
+        width: 40vmin;
+        height: 19vmin;
+        background-color:black;
+        color: #CCC;
+        text-align: center;
+        font-size: 5rem;
+        border: 2px solid #CCC;
+        margin: 10px;
+
+      }
+
+      .container{
+        height: 100vh;
+        width : 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: black;
+        display: flex;
+  flex-direction: column;
+
+      }
+
+
+    .winning-message {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .9);
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 5rem;
+      flex-direction: column;
+    }
+
+    .winning-message button {
+      font-size: 3rem;
+      background-color: white;
+      border: 1px solid black;
+      padding: .25em .5em;
+      cursor: pointer;
+    }
+
+    .winning-message button:hover {
+      background-color: black;
+      color: white;
+      border-color: white;
+    }
+
+    .winning-message.show {
+      display: flex;
+    }
+
+    #game-board:nth-child(-2n+21) {
+      background-color: black;
+    }
+
+
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+    <div id="score">
+
+    </div>
+    <div id="game-board">
+
+    </div>
+
+    <div class="winning-message" id="winningMessage">
+      <div data-winning-message-text></div>
+      <button id="restartButton">Restart</button>
+   </div>
+      </div>
+
+
+
+
+    <script src="input.js" charset="utf-8"></script>
+  </body>
+</html>
